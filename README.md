@@ -88,6 +88,6 @@ RETURN
 
 ```   
 
-These measures are part of a larger set used in the dashboard. Below are the screenshot of the data model after prepared tables were read into Power BI.
+These measures are part of a larger set used in the dashboard. Below are the screenshot of the data model after prepared tables were read into Power BI.   
 ![Measures](https://github.com/umidmirzaev/Email-Marketing-Campaign-Analysis/blob/main/measures.png)
 ![DataModel](https://github.com/umidmirzaev/Email-Marketing-Campaign-Analysis/blob/main/DataModel.png)
