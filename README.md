@@ -26,3 +26,62 @@ This project focuses on analyzing the performance of email marketing campaigns f
 | 3  | **Marketing Analyst**          | Track unsubscribes by time and segment                            | I can understand why and when users are unsubscribing            | A dashboard showing unsubscribe trends and filter by segment  |
 | 4  | **Sales Manager**              | Compare campaign performance with our business KPIs               | I can align marketing efforts with company goals                 | KPI dashboard with comparison against budget and targets      |
 | 5  | **Marketing Team Member**      | Drill down on campaign-specific performance metrics               | I can optimize future campaigns based on detailed insights       | A detailed campaign view showing delivery, open, and CTR for each campaign |
+
+## Data Transformation
+
+In this project, I utilized Power BI's DAX (Data Analysis Expressions) to transform and calculate key performance metrics for the email marketing dashboard. These calculations help track important metrics such as delivery rates, open rates, and their changes over time. Below is an example of how I calculated the **Delivery Rate (DR)** and its related measures, including monthly comparisons and variance indicators.
+
+### Example: Delivery Rate (DR) and Related Metrics
+
+```DAX
+-- Delivery Rate (DR)
+Delivery Rate (DR) = 
+DIVIDE(
+    SUM('Data'[Доставлено]), 
+    SUM(Data[Отправлено]), 
+    0
+)
+
+-- Current Month Delivery Rate
+Current Month DR = 
+CALCULATE(
+    [Delivery Rate (DR)], 
+    DATESMTD (Data[Дата])
+)
+
+-- Previous Month Delivery Rate
+Previous Month DR = 
+CALCULATE(
+    [Delivery Rate (DR)], 
+    PREVIOUSMONTH(Data[Дата])
+)
+
+-- Delivery Rate Change (absolute value)
+DR Change = 
+[Current Month DR] - [Previous Month DR]
+
+-- Delivery Rate Change (percentage)
+DR Change % = 
+DIVIDE(
+    [Current Month DR] - [Previous Month DR], 
+    [Previous Month DR], 
+    0
+)
+
+-- Delivery Rate Variance with Arrow Indicator
+DR Var % Arrow = 
+VAR _uparrow = UNICHAR(129129) -- Up arrow character
+VAR _downarrow = UNICHAR(129131) -- Down arrow character
+VAR _varpercentage = [DR Change %]
+VAR _varnumber = [DR Change]
+VAR _blank = ISBLANK([Delivery Rate (DR)])
+RETURN
+    IF(
+        _blank, 
+        BLANK(), 
+        IF(
+            _varnumber > 0, 
+            ROUND(_varpercentage, 2) * 100 & "% " & _uparrow, 
+            ROUND(_varpercentage, 2) * 100 & "% " & _downarrow
+        )
+    )
