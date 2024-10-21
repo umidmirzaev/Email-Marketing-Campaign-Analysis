@@ -87,7 +87,29 @@ RETURN
     )
 
 ```   
-
+   
+### Screenshots:
+   
 These measures are part of a larger set used in the dashboard. Below is the screenshot of the data model after the measures were calculated in Power BI:      
    
 ![DataModel](https://github.com/umidmirzaev/Email-Marketing-Campaign-Analysis/blob/main/DataModel.png)
+
+
+## Email Marketing Analysis Dashboard
+
+The **Email Marketing Analysis Dashboard** is a comprehensive tool built to help the marketing team and executives track the performance of email campaigns. The dashboard includes two main pages:
+
+- **Overview Page:** Provides a high-level summary of key metrics such as Delivery Rate (DR), Open Rate (OR), Click-Through Rate (CTR), and user engagement trends over time. It helps the marketing team quickly identify the overall success of campaigns and compare performance against previous periods.
+  
+- **Segmentation Page:** Focuses on customer segments, showing how different groups of users interact with email campaigns. It includes visualizations of the trends in sent emails, open rates, and subscription cancellation rates per segment, providing deeper insights into customer behavior.
+
+The dashboard is designed to be dynamic, with filters for date range, campaign name, and customer segments, allowing users to drill down into the details and optimize future email marketing strategies.
+
+### Screenshots:
+
+**Email Marketing Analysis - Overview Page**
+![Overview Page](https://github.com/umidmirzaev/Email-Marketing-Campaign-Analysis/blob/main/Overview.png)
+
+**Email Marketing Analysis - Segmentation Page**
+![Segmentation Page](https://github.com/umidmirzaev/Email-Marketing-Campaign-Analysis/blob/main/Segments.png)
+
