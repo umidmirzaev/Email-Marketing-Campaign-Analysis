@@ -91,7 +91,8 @@ RETURN
 ### Screenshots:
    
 These measures are part of a larger set used in the dashboard. Below is the screenshot of the data model after the measures were calculated in Power BI:      
-   
+
+**Email Marketing Analysis - Data Model**   
 ![DataModel](https://github.com/umidmirzaev/Email-Marketing-Campaign-Analysis/blob/main/DataModel.png)
 
 
